@@ -1,0 +1,16 @@
+name = "posleslovie-ai"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://ТВОЙ-ЛОГИН.github.io"
+CATALOG_URL = "https://ТВОЙ-ЛОГИН.github.io/posleslovie/catalog.json"
+MODEL = "openai/gpt-4o-mini"
+
+# не больше 8 запросов в минуту с одного IP
+[[ratelimits]]
+name = "LIMITER"
+namespace_id = "1001"
+  [ratelimits.simple]
+  limit = 8
+  period = 60
